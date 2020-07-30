@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
+import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
     descricao: '',
-    cor: ''
-  }
+    cor: '',
+  };
 
   const [categorias, setCategorias] = useState([]);
   const [values, setValues] = useState(valoresIniciais); // desestruturação
@@ -16,102 +17,77 @@ function CadastroCategoria() {
   function setValue(chave, valor) {
     setValues({
       ...values,
-      [chave]: valor
-    })
+      [chave]: valor,
+    });
   }
 
   function handleChange(infosDoEvento) {
-    const { getAttribute, value } = infosDoEvento.target;
     setValue(
-      getAttribute('name'),
-      value
+      infosDoEvento.target.getAttribute('name'),
+      infosDoEvento.target.value,
     );
   }
 
   return (
     <PageDefault>
-      <h1>Cadastro de Categoria: {values.nome}</h1>
+      <h1>
+        Cadastro de Categoria:
+        {values.nome}
+      </h1>
 
       <form
         onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault(); // evita que a pagina recarregue
           setCategorias([
             ...categorias,
-            values
+            values,
           ]);
 
           setValues(valoresIniciais);
-
         }}
       >
 
         <FormField
-          label='Nome da Categoria'
-          type='text'
-          name='nome'
+          label="Nome da Categoria"
+          type="text"
+          name="nome"
           value={values.nome}
           onChange={handleChange}
         />
 
         <FormField
-          label='Descrição'
-          type='text'
-          name='descricao'
+          label="Descrição"
+          type="textarea"
+          name="descricao"
           value={values.descricao}
           onChange={handleChange}
         />
 
-        {/* <div>
-          <label>
-            Descrição:
-            <textarea
-              type='text'
-              value={values.descricao}
-              name='descricao'
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
-
-
         <FormField
-          label='Cor'
-          type='color'
-          name='cor'
+          label="Cor"
+          type="color"
+          name="cor"
           value={values.cor}
           onChange={handleChange}
         />
 
-        {/* <div>
-          <label>
-            Cor:
-            <input
-              type='color'
-              value={values.cor}
-              name='cor'
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
-
-        <button>
+        <Button>
           Cadastrar
-          </button>
+        </Button>
       </form>
 
       <ul>
-        {categorias.map((categoria, indice) => {
-          return (
-            <li key={`${categoria}${indice}`}>
-              {categoria.nome}
-            </li>
-          )
-        })}
+        {categorias.map((categoria, indice) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <li key={`${categoria}${indice}`}>
+            {categoria.nome}
+          </li>
+        ))}
       </ul>
 
-      <Link to='/'>
+      <Link to="/">
         Ir para Home
-        </Link>
+      </Link>
     </PageDefault>
   );
 }
