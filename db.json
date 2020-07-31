@@ -1,13 +1,228 @@
 {
-    "categorias": [
-      {
-        "id": 1,
-        "titulo": "Front End",
-        "cor": "#6BD1FF",
-        "link_extra": {
-          "text": "Formação de Front End na Alura",
-          "url": "https://www.alura.com.br/cursos-online-front-end"
-        }
-      }
-     ]
-  }
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "League of Legends",
+      "cor": "#6BD1FF"
+    },
+    {
+      "id": 2,
+      "titulo": "CS:GO",
+      "cor": "#00C86F"
+    },
+    {
+      "id": 3,
+      "titulo": "Música",
+      "cor": "#9cd33b"
+    },
+    {
+      "id": 4,
+      "titulo": "Filmes",
+      "cor": "orange"
+    },
+    {
+      "id": 5,
+      "titulo": "Games",
+      "cor": "red"
+    },
+    {
+      "id": 6,
+      "titulo": "Nerdcast Stories",
+      "cor": "#6b5be2"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "CBLoL 2018: Show de Abertura | Grande Final - 2ª Etapa",
+      "url": "https://www.youtube.com/watch?v=vOV9Gcuqt7Y"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "CBLoL 2019: 2ª Etapa - Grande Final | Cerimônia de Abertura",
+      "url": "https://www.youtube.com/watch?v=if3UK4VCSJY"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Opening Ceremony Presented by Mastercard | 2019 World Championship Finals",
+      "url": "https://www.youtube.com/watch?v=6QDWbKnwRcc"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Opening Ceremony Presented by Mastercard | Finals | 2018 World Championship",
+      "url": "https://www.youtube.com/watch?v=WYSJIoehGq0"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Legends Never Die - Opening Ceremony | Finals | 2017 World Championship",
+      "url": "https://www.youtube.com/watch?v=mP3fGkpmVM0"
+    },
+    {
+      "id": 6,
+      "categoriaId": 1,
+      "titulo": "TheShy Top 10 Career Plays | Lol esports",
+      "url": "https://www.youtube.com/watch?v=WWzBoqwMoB4"
+    },
+    {
+      "id": 7,
+      "categoriaId": 1,
+      "titulo": "Warriors Live Performance Opening Ceremony 2014 Worlds Anthem | Collaboration with Imagine Dragons",
+      "url": "https://www.youtube.com/watch?v=36dx0wpLtmU"
+    },
+    {
+      "id": 8,
+      "categoriaId": 1,
+      "titulo": "Faker Top 10 Career Plays | Lol esports",
+      "url": "https://www.youtube.com/watch?v=5MtkVfwggy0"
+    },
+    {
+      "id": 9,
+      "categoriaId": 2,
+      "titulo": "[PT-BR] CS:GO - SK vs. Cloud9 - Dia 6 FINAL ESL One Cologne 2017",
+      "url": "https://www.youtube.com/watch?v=5VHQwFoIWmY"
+    },
+    {
+      "id": 10,
+      "categoriaId": 2,
+      "titulo": "[PT-BR] MiBR vs. Astralis | IEM Katowice Major 2019 [Campeões - Dia 3] [Mapa 1 - OVERPASS]",
+      "url": "https://www.youtube.com/watch?v=n3fPzsgDD3E"
+    },
+    {
+      "id": 11,
+      "categoriaId": 2,
+      "titulo": "IEM Katowice 2019 - Mibr vs Astralis - Mapa II (Inferno) - Major (MD3) - Semifinal",
+      "url": "https://www.youtube.com/watch?v=m6l4R3lRcxo"
+    },
+    {
+      "id": 12,
+      "categoriaId": 2,
+      "titulo": "IEM Katowice 2019 - Mibr vs Complexity - Group Stage - MD1",
+      "url": "https://www.youtube.com/watch?v=aXE9ZbTQOVk"
+    },
+    {
+      "id": 13,
+      "categoriaId": 2,
+      "titulo": "IEM Katowice 2019 - Mibr vs Renegades - Mapa II (Train) - Major (MD3)",
+      "url": "https://www.youtube.com/watch?v=bFjRvVdhPf0"
+    },
+    {
+      "id": 14,
+      "categoriaId": 3,
+      "titulo": "Maverick Sabre - Slow Down Feat. Jorja Smith (Slow Motion & Vintage Culture Official Remix)",
+      "url": "https://www.youtube.com/watch?v=76mkEfxxIl0"
+    },
+    {
+      "id": 15,
+      "categoriaId": 3,
+      "titulo": "John Mayer - Neon",
+      "url": "https://www.youtube.com/watch?v=_DfQC5qHhbo"
+    },
+    {
+      "id": 16,
+      "categoriaId": 3,
+      "titulo": "Little Simz - Selfish feat. Cleo Sol ",
+      "url": "https://www.youtube.com/watch?v=iSSKDIcpdSE"
+    },
+    {
+      "id": 17,
+      "categoriaId": 3,
+      "titulo": "Childish Gambino - Summertime Magic",
+      "url": "https://www.youtube.com/watch?v=diLp6hUqvVk"
+    },
+    {
+      "id": 18,
+      "categoriaId": 4,
+      "titulo": "Interestellar",
+      "url": "https://www.youtube.com/watch?v=frD_IiY_A3E"
+    },
+    {
+      "id": 19,
+      "categoriaId": 4,
+      "titulo": "Gattaca",
+      "url": "https://www.youtube.com/watch?v=Dl0tYLbrhhs"
+    },
+    {
+      "id": 20,
+      "categoriaId": 4,
+      "titulo": "A Chegada",
+      "url": "https://www.youtube.com/watch?v=rNciXGzYZms"
+    },
+    {
+      "id": 21,
+      "categoriaId": 4,
+      "titulo": "Feitiço do Tempo",
+      "url": "https://www.youtube.com/watch?v=zi8d69P9NvI"
+    },
+    {
+      "id": 22,
+      "categoriaId": 5,
+      "titulo": "Final Fantasy 7",
+      "url": "https://www.youtube.com/watch?v=I_ATSCTnUD8"
+    },
+    {
+      "id": 23,
+      "categoriaId": 5,
+      "titulo": "Assassins Creed Valhalla",
+      "url": "https://www.youtube.com/watch?v=KDfdjB9uL0U"
+    },
+    {
+      "id": 24,
+      "categoriaId": 5,
+      "titulo": "God of War 4",
+      "url": "https://www.youtube.com/watch?v=FyIwEFXOcaE"
+    },
+    {
+      "id": 25,
+      "categoriaId": 5,
+      "titulo": "Resident Evil 8",
+      "url": "https://www.youtube.com/watch?v=JSapXD9vxYA"
+    },
+    {
+      "id": 26,
+      "categoriaId": 5,
+      "titulo": "Pokémon Let's Go Pikachu/Eevee",
+      "url": "https://www.youtube.com/watch?v=L56q_k2ydrs"
+    },
+    {
+      "id": 27,
+      "categoriaId": 6,
+      "titulo": "SEU FRANCISCO",
+      "url": "https://www.youtube.com/watch?v=uFRigtgjM-c"
+    },
+    {
+      "id": 28,
+      "categoriaId": 6,
+      "titulo": "NÃO CONTE ESSE SEGREDO PRA NINGUÉM",
+      "url": "https://www.youtube.com/watch?v=jEo5cQAWoWg"
+    },
+    {
+      "id": 29,
+      "categoriaId": 6,
+      "titulo": "A MENTE DE DIOGO BRAGA",
+      "url": "https://www.youtube.com/watch?v=phPusTy5yYk"
+    },
+    {
+      "id": 30,
+      "categoriaId": 6,
+      "titulo": "CALL OF CTHULHU – BILLY, O HERÓI",
+      "url": "https://www.youtube.com/watch?v=lU0vf3Fw8WI"
+    },
+    {
+      "id": 31,
+      "categoriaId": 6,
+      "titulo": "CALL OF CTHULHU - VENCENDO UMA DISCUSSÃO",
+      "url": "https://www.youtube.com/watch?v=k36SXgHThcY"
+    },
+    {
+      "titulo": "Video padrão",
+      "url": "https://www.youtube.com/watch?v=jOAU81jdi-c",
+      "categoriaId": 1,
+      "id": 32
+    }
+  ]
+}
