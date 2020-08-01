@@ -4,6 +4,8 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
+import Loading from '../../../components/Loading';
+import SimpleTable from '../../../components/Table';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -79,9 +81,7 @@ function CadastroCategoria() {
       </form>
 
       {categorias.length === 0 && (
-        <div>
-          Loading...
-        </div>
+        <Loading />
       )}
 
       <ul>
@@ -96,7 +96,11 @@ function CadastroCategoria() {
       <Link to="/">
         Ir para Home
       </Link>
+
+      <SimpleTable />
+
     </PageDefault>
+
   );
 }
 
