@@ -95,7 +95,7 @@ function CadastroCategoria() {
       <Link to="/">
         Ir para Home
       </Link>
-      {categorias.length > 0 && (<SimpleTable category={categorias} />)}
+      {categorias.length > 0 && (<SimpleTable />)}
 
     </PageDefault>
 

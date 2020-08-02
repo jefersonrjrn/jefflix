@@ -43,8 +43,23 @@ function getAllWithVideos() {
     });
 }
 
+function remove(id) {
+  return fetch(`${URL_CATEGORIES}/${id}`, {
+    method: 'delete',
+  })
+    .then(async (respostaDoServidor) => {
+      if (respostaDoServidor.ok) {
+        const resposta = await respostaDoServidor.json();
+        return resposta;
+      }
+
+      throw new Error('Não foi possível deletar a categoria :(');
+    });
+}
+
 export default {
   getAllWithVideos,
   getAll,
   create,
+  remove,
 };
