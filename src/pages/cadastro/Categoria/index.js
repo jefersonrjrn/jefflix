@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
 import Loading from '../../../components/Loading';
 import SimpleTable from '../../../components/Table';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const valoresIniciais = {
@@ -13,7 +14,7 @@ function CadastroCategoria() {
     descricao: '',
     cor: '',
   };
-
+  const history = useHistory();
   const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
   const [categorias, setCategorias] = useState([]);
@@ -32,6 +33,7 @@ function CadastroCategoria() {
       });
   }, []);
 
+  console.log(categorias);
   return (
     <PageDefault>
       <h1>
@@ -42,10 +44,16 @@ function CadastroCategoria() {
       <form
         onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault(); // evita que a pagina recarregue
-          setCategorias([
-            ...categorias,
-            values,
-          ]);
+
+          categoriasRepository.create({
+            titulo: values.nome,
+            descricao: values.descricao,
+            cor: values.cor,
+          })
+            .then(() => {
+              console.log('Cadastrou com sucesso!');
+              history.push('/');
+            });
 
           clearForm();
         }}
@@ -84,20 +92,10 @@ function CadastroCategoria() {
         <Loading />
       )}
 
-      <ul>
-        {categorias.map((categoria) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <li key={`${categoria.titulo}`}>
-            {categoria.titulo}
-          </li>
-        ))}
-      </ul>
-
       <Link to="/">
         Ir para Home
       </Link>
-
-      <SimpleTable />
+      {categorias.length > 0 && (<SimpleTable category={categorias} />)}
 
     </PageDefault>
 

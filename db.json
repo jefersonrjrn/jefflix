@@ -3,31 +3,37 @@
     {
       "id": 1,
       "titulo": "League of Legends",
+      "descricao": "Tudo sobre competições de League of Legends",
       "cor": "#6BD1FF"
     },
     {
       "id": 2,
       "titulo": "CS:GO",
+      "descricao": "Tudo sobre competições de CS:GO",
       "cor": "#00C86F"
     },
     {
       "id": 3,
       "titulo": "Música",
+      "descricao": "Tudo sobre música",
       "cor": "#9cd33b"
     },
     {
       "id": 4,
       "titulo": "Filmes",
+      "descricao": "Tudo sobre Filmes",
       "cor": "orange"
     },
     {
       "id": 5,
       "titulo": "Games",
+      "descricao": "Tudo sobre Games",
       "cor": "red"
     },
     {
       "id": 6,
       "titulo": "Nerdcast Stories",
+      "descricao": "Tudo sobre Stories",
       "cor": "#6b5be2"
     }
   ],

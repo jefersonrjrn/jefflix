@@ -17,49 +17,38 @@ const useStyles = makeStyles({
     background: 'black',
     border: 'solid red',
   },
+  headCells: {
+    color: 'white',
+    fontSize: 27,
+  },
   cells: {
     color: 'white',
+    fontSize: 15,
   },
 });
 
-function createData(name, calories, fat, carbs, protein) {
-  return {
-    name, calories, fat, carbs, protein,
-  };
-}
-
-const rows = [
-  createData('League of Legends', 159, 6.0, 24, 4.0),
-  createData('CS:GO', 237, 9.0, 37, 4.3),
-  createData('Música', 262, 16.0, 24, 6.0),
-  createData('Filmes', 305, 3.7, 67, 4.3),
-  createData('Games', 356, 16.0, 49, 3.9),
-  createData('Nerdcast Stories', 356, 16.0, 49, 3.9),
-];
-
-export default function SimpleTable() {
+export default function SimpleTable(props) {
   const classes = useStyles();
 
+  console.log(props);
   return (
     <TableContainer component={Paper} className={classes.tableContainer}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className={classes.cells}>Categoria</TableCell>
-            <TableCell align="right" className={classes.cells}>Descrição</TableCell>
-            <TableCell align="right" className={classes.cells}>Editar</TableCell>
-            <TableCell align="right" className={classes.cells}>Remover</TableCell>
+            <TableCell className={classes.headCells}>Categoria</TableCell>
+            <TableCell align="left" className={classes.headCells}>Descrição</TableCell>
+            <TableCell align="center" className={classes.headCells}>Editar</TableCell>
+            <TableCell align="center" className={classes.headCells}>Remover</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row" className={classes.cells}>
-                {row.name}
-              </TableCell>
-              <TableCell align="right" className={classes.cells}>{row.calories}</TableCell>
-              <TableCell align="right" className={classes.cells}>{row.fat}</TableCell>
-              <TableCell align="right" className={classes.cells}>{row.carbs}</TableCell>
+          {props.category.map((categoria) => (
+            <TableRow key={categoria.id}>
+              <TableCell className={classes.cells}>{categoria.titulo}</TableCell>
+              <TableCell align="left" component="th" scope="row" className={classes.cells}>{categoria.descricao}</TableCell>
+              <TableCell align="center" component="th" scope="row" className={classes.cells}>Editar</TableCell>
+              <TableCell align="center" component="th" scope="row" className={classes.cells}>Excluir</TableCell>
             </TableRow>
           ))}
         </TableBody>
