@@ -57,9 +57,28 @@ function remove(id) {
     });
 }
 
+function edit(categoria) {
+  return fetch(`${URL_CATEGORIES}/${categoria.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(categoria),
+  })
+    .then(async (respostaDoServidor) => {
+      if (respostaDoServidor.ok) {
+        const resposta = await respostaDoServidor.json();
+        return resposta;
+      }
+
+      throw new Error('Não foi possível editar a categoria :(');
+    });
+}
+
 export default {
   getAllWithVideos,
   getAll,
   create,
   remove,
+  edit,
 };

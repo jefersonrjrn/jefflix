@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import useForm from '../../../hooks/useForm';
-import Loading from '../../../components/Loading';
-import SimpleTable from '../../../components/Table';
 import categoriasRepository from '../../../repositories/categorias';
 
-function CadastroCategoria() {
+function EditarCategoria() {
+  const { id } = useParams();
   const valoresIniciais = {
     nome: '',
     descricao: '',
@@ -17,27 +16,10 @@ function CadastroCategoria() {
   const history = useHistory();
   const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
-  const [categorias, setCategorias] = useState([]);
-
-  useEffect(() => {
-    const URL = window.location.hostname.includes('localhost')
-      ? 'http://localhost:8080/categorias'
-      : 'https://jefflix1.herokuapp.com/categorias';
-
-    fetch(URL)
-      .then(async (respostaDoServidor) => {
-        const resposta = await respostaDoServidor.json();
-        setCategorias([
-          ...resposta,
-        ]);
-      });
-  }, []);
-
-  console.log(categorias);
   return (
     <PageDefault>
       <h1>
-        Cadastro de Categoria:
+        Editar Categoria:
         {values.nome}
       </h1>
 
@@ -45,14 +27,15 @@ function CadastroCategoria() {
         onSubmit={function handleSubmit(infosDoEvento) {
           infosDoEvento.preventDefault(); // evita que a pagina recarregue
 
-          categoriasRepository.create({
+          categoriasRepository.edit({
+            id,
             titulo: values.nome,
             descricao: values.descricao,
             cor: values.cor,
           })
             .then(() => {
-              console.log('Cadastrou com sucesso!');
-              history.push('/');
+              console.log('Editou a categoria com sucesso!');
+              history.push('/cadastro/categoria');
             });
 
           clearForm();
@@ -88,14 +71,8 @@ function CadastroCategoria() {
         </Button>
       </form>
 
-      {categorias.length === 0 && (
-        <Loading />
-      )}
-
-      {categorias.length > 0 && (<SimpleTable />)}
-
-      <Link to="/cadastro/video">
-        Ir para Home Cadastro de Video
+      <Link to="/">
+        Ir para Home
       </Link>
 
     </PageDefault>
@@ -103,4 +80,4 @@ function CadastroCategoria() {
   );
 }
 
-export default CadastroCategoria;
+export default EditarCategoria;

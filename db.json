@@ -35,6 +35,12 @@
       "titulo": "Nerdcast Stories",
       "descricao": "Tudo sobre Stories",
       "cor": "#6b5be2"
+    },
+    {
+      "id": 7,
+      "titulo": "teste1",
+      "descricao": "teste1",
+      "cor": ""
     }
   ],
   "videos": [

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -30,6 +31,7 @@ const useStyles = makeStyles({
 });
 
 export default function SimpleTable() {
+  const history = useHistory();
   const classes = useStyles();
   const [categorias, setCategorias] = useState([]);
 
@@ -64,7 +66,11 @@ export default function SimpleTable() {
               <TableCell className={classes.cells}>{categoria.titulo}</TableCell>
               <TableCell align="left" component="th" scope="row" className={classes.cells}>{categoria.descricao}</TableCell>
               <TableCell align="center" component="th" scope="row" className={classes.cells}>
-                <Button>Editar</Button>
+                <Button
+                  onClick={() => history.push(`${categoria.id}`)}
+                >
+                  Editar
+                </Button>
               </TableCell>
               <TableCell align="center" component="th" scope="row" className={classes.cells}>
                 <Button onClick={() => {
